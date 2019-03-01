@@ -9,6 +9,8 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
+
     "importHelpers": true,
     "target": "es5",
     "typeRoots": [
@@ -18,5 +20,6 @@
       "es2018",
       "dom"
     ]
-  }
+  },
+  "exclude": ["src/wallabyTest.ts"]
 }

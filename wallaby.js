@@ -29,8 +29,11 @@ module.exports = function (wallaby) {
     resolve: {
       extensions: ['.js', '.ts'],
       modules: [
+        wallaby.projectCacheDir,
         path.join(wallaby.projectCacheDir, 'src/app'),
         path.join(wallaby.projectCacheDir, 'src'),
+
+        
         'node_modules'
       ]
     },
@@ -46,7 +49,9 @@ module.exports = function (wallaby) {
     files: [
       {pattern: 'src/**/*.+(ts|css|less|scss|sass|styl|html|json|svg)', load: false},
       {pattern: 'src/**/*.d.ts', ignore: true},
-      {pattern: 'src/**/*spec.ts', ignore: true}
+      {pattern: 'src/**/*spec.ts', ignore: true},
+      {pattern: 'package.json', load: false, instrument: true},
+
     ],
 
     tests: [
